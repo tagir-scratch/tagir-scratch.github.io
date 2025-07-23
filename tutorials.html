@@ -3,38 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Туториалы | Tagir14012014</title>
-    <meta name="description" content="Сборник туториалов по различным темам">
-    <meta name="keywords" content="туториалы, уроки, обучение, программирование, веб-разработка">
+    <title>Туториалы по Scratch | Tagir14012014</title>
+    <meta name="description" content="Сборник туториалов по Scratch для начинающих и опытных пользователей">
+    <meta name="keywords" content="Scratch, туториалы, уроки, программирование, дети">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .tutorial-section {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .tutorial-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .tutorial-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .tutorial-card h3 {
+            margin-top: 0;
+        }
+        
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .btn:hover {
+            background-color: #444;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Туториалы</h1>
+        <h1>Туториалы по Scratch</h1>
+        <p>Добро пожаловать на наш сайт, где вы можете найти туториалы по Scratch для всех уровней!</p>
     </header>
     <main>
-        <section>
-            <h2>Программирование</h2>
-            <ul>
-                <li><a href="tutorial1.html">Основы программирования</a></li>
-                <li><a href="tutorial2.html">Продвинутые техники программирования</a></li>
-                <li><a href="tutorial3.html">Программирование на Python</a></li>
-            </ul>
+        <section class="tutorial-section">
+            <h2>Для начинающих</h2>
+            <div class="tutorial-card">
+                <img src="scratch-tutorial-1.png" alt="Туториал 1">
+                <h3>Создание первого проекта в Scratch</h3>
+                <p>Узнайте, как создать свой первый проект в Scratch и начать программировать!</p>
+                <a href="tutorial-1.html" class="btn">Начать</a>
+            </div>
+            <div class="tutorial-card">
+                <img src="scratch-tutorial-2.png" alt="Туториал 2">
+                <h3>Основные блоки в Scratch</h3>
+                <p>Узнайте об основных блоках в Scratch и как их использовать!</p>
+                <a href="tutorial-2.html" class="btn">Узнать больше</a>
+            </div>
         </section>
-        <section>
-            <h2>Веб-разработка</h2>
-            <ul>
-                <li><a href="web-tutorial1.html">Создание сайтов с помощью HTML и CSS</a></li>
-                <li><a href="web-tutorial2.html">Разработка адаптивных сайтов</a></li>
-                <li><a href="web-tutorial3.html">Веб-разработка с помощью JavaScript</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Дизайн и графика</h2>
-            <ul>
-                <li><a href="design-tutorial1.html">Основы графического дизайна</a></li>
-                <li><a href="design-tutorial2.html">Работа с Adobe Photoshop</a></li>
-                <li><a href="design-tutorial3.html">Создание логотипов и брендов</a></li>
-            </ul>
+        <section class="tutorial-section">
+            <h2>Для опытных пользователей</h2>
+            <div class="tutorial-card">
+                <img src="scratch-tutorial-3.png" alt="Туториал 3">
+                <h3>Создание игр в Scratch</h3>
+                <p>Узнайте, как создать свою первую игру в Scratch!</p>
+                <a href="tutorial-3.html" class="btn">Начать</a>
+            </div>
+            <div class="tutorial-card">
+                <img src="scratch-tutorial-4.png" alt="Туториал 4">
+                <h3>Расширенные возможности Scratch</h3>
+                <p>Узнайте о расширенных возможностях Scratch и как их использовать!</p>
+                <a href="tutorial-4.html" class="btn">Узнать больше</a>
+            </div>
         </section>
     </main>
     <footer>
