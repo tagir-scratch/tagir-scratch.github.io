@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интерактивный курс по HTML | Tagir14012014</title>
+    <title>Курс по Clicker Scratch | Tagir14012014</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,20 +30,16 @@
             padding: 20px;
         }
         
-        .question {
+        .course-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
         }
         
-        .question p {
-            margin-bottom: 10px;
-        }
-        
-        .answers {
+        .course-text {
             margin-bottom: 20px;
-        }
-        
-        .answer {
-            margin-bottom: 10px;
         }
         
         .btn {
@@ -59,139 +55,80 @@
         .btn:hover {
             background-color: #444;
         }
+        
+        .btn-prev {
+            float: left;
+        }
+        
+        .btn-next {
+            float: right;
+        }
     </style>
 </head>
 <body>
     <div class="course-container">
         <div class="course-header">
-            <h1>Интерактивный курс по HTML</h1>
-            <p>Добро пожаловать на наш интерактивный курс по HTML!</p>
+            <h1>Курс по Clicker Scratch</h1>
+            <p>Добро пожаловать на наш курс по Clicker Scratch!</p>
         </div>
         <div class="course-content">
-            <div class="question">
-                <p>Что такое HTML?</p>
-                <div class="answers">
-                    <div class="answer">
-                        <input type="radio" id="answer-1" name="question-1">
-                        <label for="answer-1">HTML - это язык программирования.</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" id="answer-2" name="question-1">
-                        <label for="answer-2">HTML - это язык разметки гипертекста.</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" id="answer-3" name="question-1">
-                        <label for="answer-3">HTML - это база данных.</label>
-                    </div>
-                </div>
-                <button class="btn">Далее</button>
-            </div>
-            <div class="question">
-                <p>Что такое тег &lt;p&gt;?</p>
-                <div class="answers">
-                    <div class="answer">
-                        <input type="radio" id="answer-4" name="question-2">
-                        <label for="answer-4">Тег &lt;p&gt; используется для создания параграфа.</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" id="answer-5" name="question-2">
-                        <label for="answer-5">Тег &lt;p&gt; используется для создания заголовка.</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" id="answer-6" name="question-2">
-                        <label for="answer-6">Тег &lt;p&gt; используется для создания ссылки.</label>
-                    </div>
-                </div>
-                <button class="btn">Далее</button>
-            </div>
+            <img src="course-image-1.png" alt="Картинка 1" class="course-image">
+            <p class="course-text">Это текст первой страницы курса.</p>
+            <button class="btn btn-prev" onclick="prevPage()">Предыдущая страница</button>
+            <button class="btn btn-next" onclick="nextPage()">Следующая страница</button>
         </div>
     </div>
 
     <script>
-        const questions = [
-            {
-                question: "Что такое HTML?",
-                answers: [
-                    { text: "HTML - это язык программирования.", correct: false },
-                    { text: "HTML - это язык разметки гипертекста.", correct: true },
-                    { text: "HTML - это база данных.", correct: false }
-                ]
-            },
-            {
-                question: "Что такое тег &lt;p&gt;?",
-                answers: [
-                    { text: "Тег &lt;p&gt; используется для создания параграфа.", correct: true },
-                    { text: "Тег &lt;p&gt; используется для создания заголовка.", correct: false },
-                    { text: "Тег &lt;p&gt; используется для создания ссылки.", correct: false }
-                ]
-            }
+        let currentPage = 1;
+
+        const courseImages = [
+            { src: 'course-image-1.png', text: 'Это текст первой страницы курса.' },
+            { src: 'course-image-2.png', text: 'Это текст второй страницы курса.' },
+            { src: 'course-image-3.png', text: 'Это текст третьей страницы курса.' }
         ];
 
-        let currentQuestion = 0;
-        const courseContent = document.querySelector('.course-content');
-
-        function showQuestion() {
-            const questionElement = document.createElement('div');
-            questionElement.classList.add('question');
-
-            const questionText = document.createElement('p');
-            questionText.textContent = questions[currentQuestion].question;
-            questionElement.appendChild(questionText);
-
-            const answersElement = document.createElement('div');
-            answersElement.classList.add('answers');
-
-            questions[currentQuestion].answers.forEach((answer, index) => {
-                const answerElement = document.createElement('div');
-                answerElement.classList.add('answer');
-
-                const radioInput = document.createElement('input');
-                radioInput.type = 'radio';
-                radioInput.id = `answer-${index}`;
-                radioInput.name = `question-${currentQuestion}`;
-                answerElement.appendChild(radioInput);
-
-                const labelElement = document.createElement('label');
-                labelElement.textContent = answer.text;
-                labelElement.htmlFor = `answer-${index}`;
-                answerElement.appendChild(labelElement);
-
-                answersElement.appendChild(answerElement);
-            });
-
-            questionElement.appendChild(answersElement);
-
-            const btnElement = document.createElement('button');
-            btnElement.classList.add('btn');
-            btnElement.textContent = 'Далее';
-            btnElement.onclick = checkAnswer;
-            questionElement.appendChild(btnElement);
-
-            courseContent.appendChild(questionElement);
-        }
-
-        function checkAnswer() {
-            const answers = document.querySelectorAll(`input[name="question-${currentQuestion}"]`);
-            const correctAnswer = questions[currentQuestion].answers.findIndex(answer => answer.correct);
-
-            if (answers[correctAnswer].checked) {
-                alert('Правильный ответ!');
-            } else {
-                alert(`Неправильный ответ. Правильный ответ: ${questions[currentQuestion].answers[correctAnswer].text}`);
-            }
-
-            currentQuestion++;
-
-            if (currentQuestion >= questions.length) {
-                courseContent.innerHTML = '';
-                courseContent.textContent = 'Поздравляем! Вы прошли курс!';
-            } else {
-                courseContent.innerHTML = '';
-                showQuestion();
+        function nextPage() {
+            if (currentPage < courseImages.length) {
+                currentPage++;
+                updateCourseContent();
             }
         }
 
-        showQuestion();
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updateCourseContent();
+            }
+        }
+
+        function updateCourseContent() {
+            const courseContent = document.querySelector('.course-content');
+            courseContent.innerHTML = '';
+
+            const courseImage = document.createElement('img');
+            courseImage.src = courseImages[currentPage - 1].src;
+            courseImage.alt = `Картинка ${currentPage}`;
+            courseImage.classList.add('course-image');
+            courseContent.appendChild(courseImage);
+
+            const courseText = document.createElement('p');
+            courseText.textContent = courseImages[currentPage - 1].text;
+            courseText.classList.add('course-text');
+            courseContent.appendChild(courseText);
+
+            const btnPrev = document.createElement('button');
+            btnPrev.textContent = 'Предыдущая страница';
+            btnPrev.classList.add('btn', 'btn-prev');
+            btnPrev.onclick = prevPage;
+            courseContent.appendChild(btnPrev);
+
+            const btnNext = document.createElement('button');
+            btnNext.textContent = 'Следующая страница';
+            btnNext.classList.add('btn', 'btn-next');
+            btnNext.onclick = nextPage;
+            courseContent.appendChild(btnNext);
+        }
     </script>
 </body>
 </html>
