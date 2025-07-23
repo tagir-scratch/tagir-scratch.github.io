@@ -4,6 +4,7 @@
     <link rel="shortcut icon" href="https://kpytoxakep.github.io/tagir-site/images/%D0%B0%D0%B2%D0%B0%D1%82%D0%B0%D1%803.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Курс по кликеру в Scratch | Tagir14012014</title>
     <style>
         body {
@@ -84,11 +85,11 @@
         let currentPage = 1;
 
         const courseImages = [
-            { src: 'https://tagir-scratch.github.io/картинка 1.png', text: 'Для начала создайте спрайт монетки (на неё вы будете нажимать)' },
-            { src: 'https://tagir-scratch.github.io/картинка 2.png', text: 'Теперь создадим переменную "Монеты" на ней будет отображатся количество монет' },
-            { src: 'course-image-3.png', text: 'Это текст третьей страницы курса.' }
-            { src: 'course-image-4.png', text: 'Это текст четвёртой страницы курса.' }
-            { src: 'course-image-5.png', text: 'Это текст пятой страницы курса.' }
+            { src: 'https://tagir-scratch.github.io/картинка%201.png', text: 'Для начала создайте спрайт монетки (на неё вы будете нажимать)' },
+            { src: 'https://tagir-scratch.github.io/картинка%202.png', text: 'Теперь создадим переменную "Монеты" на ней будет отображатся количество монет' },
+            { src: 'course-image-3.png', text: 'Это текст третьей страницы курса.' },
+            { src: 'course-image-4.png', text: 'Это текст четвёртой страницы курса.' },
+            { src: 'course-image-5.png', text: 'Это текст пятой страницы курса.' },
             { src: 'course-image-6.png', text: 'Это текст шестой страницы курса.' }
         ];
 
@@ -122,17 +123,19 @@
             courseContent.appendChild(courseText);
 
             const btnPrev = document.createElement('button');
-            btnPrev.textContent = 'Предыдущая страница';
+            btnPrev.textContent = 'Назад';
             btnPrev.classList.add('btn', 'btn-prev');
             btnPrev.onclick = prevPage;
             courseContent.appendChild(btnPrev);
 
             const btnNext = document.createElement('button');
-            btnNext.textContent = 'Следующая страница';
+            btnNext.textContent = 'Далее';
             btnNext.classList.add('btn', 'btn-next');
             btnNext.onclick = nextPage;
             courseContent.appendChild(btnNext);
         }
+
+        updateCourseContent();
     </script>
 </body>
 </html>
