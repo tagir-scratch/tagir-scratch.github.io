@@ -34,7 +34,7 @@
         
         .course-image {
             width: 100%;
-            height: auto;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
@@ -85,12 +85,11 @@
         let currentPage = 1;
 
         const courseImages = [
-            { src: 'https://tagir-scratch.github.io/картинка%201.png', text: 'Для начала создайте спрайт монетки (на неё вы будете нажимать)' },
-            { src: 'https://tagir-scratch.github.io/картинка%202.png', text: 'Теперь создадим переменную "Монеты" на ней будет отображатся количество монет' },
-            { src: 'course-image-3.png', text: 'Это текст третьей страницы курса.' },
-            { src: 'course-image-4.png', text: 'Это текст четвёртой страницы курса.' },
-            { src: 'course-image-5.png', text: 'Это текст пятой страницы курса.' },
-            { src: 'course-image-6.png', text: 'Это текст шестой страницы курса.' }
+            { src: 'https://tagir-scratch.github.io/картинка%203.png', text: 'Для начала давайте создадим спрайт (нажмите на кисточку)' },
+            { src: 'https://tagir-scratch.github.io/картинка%201.png', text: 'Теперь нарисуем монетку (на неё мы будем нажимать)' },
+            { src: 'https://tagir-scratch.github.io/картинка%202.png', text: 'Далее создадим переменную "Монеты" (на ней будет отображатся количество монет)' },
+            { src: 'https://tagir-scratch.github.io/картинка%204.png', text: 'А теперь напишем код на картинке. Как работает. Когда флажок нажимается переменная "Монеты" обнуляется, а когда спрайт нажат переменная монеты увеличивается на 1, играет звук "Поп" и монета уменьшается а затем уеличивается.' },
+            { src: 'https://tagir-scratch.github.io/примечания.svg', text: 'Когда создаётся пустой проект автоматически появляется спрайт кота поэтому его надо удалить (нажать на иконку мосорки)' },
         ];
 
         function nextPage() {
