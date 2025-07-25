@@ -1,0 +1,3 @@
+User-agent: Yandex
+Disallow: /search/ https://tagir-scratch.github.io/sitemap.txt
+Sitemap: https://tagir-scratch.github.io/sitemap.txt
